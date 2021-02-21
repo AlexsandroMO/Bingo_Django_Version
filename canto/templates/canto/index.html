@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Documentos{% endblock %}
+{% block content %}
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex flex-column justify-content-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-8">
+        <h1>Número Sorteado</h1>
+        <h2>
+          {% if num == '-' %}
+            <p>Ops, Número Sorteado Já saiu. Vamos de novo!</p>
+          {% else %}
+            <p id="p-ajust">[ {{ num }} ]</p>
+          {% endif %}
+        </h2>
+        <h2>
+          <p id="p-ajust2"> 
+          {% for item in var_list %}
+            {{ item }} |
+          {% endfor %}
+          </p>
+        </h2>
+        <h2>
+          <p id="p-ajust2">
+            {% if falta == 'Acabou!' %}
+              <p id="p-ajust2">Acabou!</p>
+            {% else %}
+              <p>Faltam: {{ falta }} números a serem sorteados</p>
+            {% endif %}
+          </p>
+        </h2>
+      </div>
+
+      <a href="{% url 'index' %}"><i class="far fa-caret-square-right fa-3x"></i></a>
+      
+      </div>
+    </div>
+  </div>
+</section><!-- End Hero -->
+
+
+
+{% endblock %}
