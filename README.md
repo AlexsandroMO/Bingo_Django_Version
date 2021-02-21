@@ -1,0 +1,1 @@
+# Bingo_Django_Version
